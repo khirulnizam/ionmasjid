@@ -15,7 +15,7 @@ export class FirebaseService {
       let post_key=firebase.database().ref().child('abcabc').push().key;
       //_pfaiadslahahbsd
 
-      firebase.database().ref('activity/'+post_key+'/')
+      firebase.database().ref('activities/'+post_key+'/')
       .set(entry)
       .then(resp=>{
         resolve("OK");

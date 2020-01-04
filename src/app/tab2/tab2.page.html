@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="secondary">
     <ion-title>
       List Activity
     </ion-title>
@@ -7,18 +7,32 @@
 </ion-header>
 
 <ion-content>
-	<ion-list>
-    <ion-item-sliding *ngFor="let data of activities">
-      <ion-item detail lines="full>
-        <ion-icon name="desktop" slot="start"></ion-icon>
-        {{data.acname}}
-      </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option color="primary">EDIT</ion-item-option>
-        <ion-item-option color="danger" ">DELETE</ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+	<ion-card class="welcome-card">
+	<ion-card-header >
+		<img src="/assets/logokuis.png" alt="" />
+        <ion-card-subtitle>SmartMasjid</ion-card-subtitle>
+        <ion-card-title>View Activity</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>You may want to swipe-left to manipulate record</p>
+		<ion-list>
+	    <ion-item-sliding *ngFor="let data of activities">
+	      <ion-item detail lines="full">
+	        <ion-icon name="calendar" slot="start"></ion-icon>
+	        {{data.acname}}
+	      </ion-item>
+	      <ion-item-options side="end">
+	        <ion-item-option color="success">
+	        	<ion-icon name="create"></ion-icon>
+	        </ion-item-option>
+	        <ion-item-option color="danger">
+	        	<ion-icon name="trash"></ion-icon>
+	        </ion-item-option>
+	      </ion-item-options>
+	    </ion-item-sliding>
+	  </ion-list>
+	</ion-card-content>
+</ion-card>
 
 
 </ion-content>
