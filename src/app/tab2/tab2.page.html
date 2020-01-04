@@ -6,4 +6,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+	<ion-list>
+    <ion-item-sliding *ngFor="let data of activities">
+      <ion-item detail lines="full>
+        <ion-icon name="desktop" slot="start"></ion-icon>
+        {{data.acname}}
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="primary">EDIT</ion-item-option>
+        <ion-item-option color="danger" ">DELETE</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
+</ion-content>
