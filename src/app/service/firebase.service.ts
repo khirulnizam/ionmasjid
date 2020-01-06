@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+//for firebase import 
 import * as firebase from 'firebase';
 
 @Injectable({
@@ -16,13 +17,13 @@ export class FirebaseService {
       //_pfaiadslahahbsd
 
       firebase.database().ref('activities/'+post_key+'/')
-      .set(entry)
+      .set(entry) //insert record to firebase
       .then(resp=>{
-        resolve("OK");
+        resolve("OK");//record successfully added to root firebase
       },err=>{
-        reject(err);
+        reject(err);//record failed to insert
       })
 
     })
-  }
-}
+  }//end create entry
+}//end class FirebaseService

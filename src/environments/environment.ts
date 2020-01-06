@@ -5,17 +5,17 @@
 export const environment = {
   production: false,
   // Your web app's Firebase configuration
-  // Your web app's Firebase configuration
-  firebaseConfig : {
-    apiKey: "AIzaSyC38vcXJ2-IUO4biSwRPHhE0giUebfPRh4",
-    authDomain: "smasjid-d7689.firebaseapp.com",
-    databaseURL: "https://smasjid-d7689.firebaseio.com",
-    projectId: "smasjid-d7689",
-    storageBucket: "smasjid-d7689.appspot.com",
-    messagingSenderId: "99046607648",
-    appId: "1:99046607648:web:4e7e3f48766b8b1bde2545",
-    measurementId: "G-HDSYDCZFET"
-	}
+  // inenvironments/environment.ts
+  firebaseConfig : {//change to colon
+    apiKey: "AIzaSyCgvRtO2ZbX4Jx9ym2xM8uy2Z_ZnCGWVwY",
+    authDomain: "smartmasjid-f1dcc.firebaseapp.com",
+    databaseURL: "https://smartmasjid-f1dcc.firebaseio.com",
+    projectId: "smartmasjid-f1dcc",
+    storageBucket: "smartmasjid-f1dcc.appspot.com",
+    messagingSenderId: "440241693209",
+    appId: "1:440241693209:web:fc14836d18ad6af4024088",
+    measurementId: "G-S3T2Q37QV9"
+  }
  };
 
 /*

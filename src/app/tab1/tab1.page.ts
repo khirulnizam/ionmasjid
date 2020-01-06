@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+//import Firebase Service
 import {FirebaseService} from '../service/firebase.service';
 
 @Component({
@@ -7,25 +8,23 @@ import {FirebaseService} from '../service/firebase.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-	data:any={};//object variable
+	data:any={};//object variable for record entry
 
   constructor(
+  	//declare FirebaseService as fb
   	public fb:FirebaseService,
   	) {}
 
-  createActivity(){
+  createActivity(){//create data entry
   	//timestamp
   	let t=new Date();
   	this.data.zztimestamp=t.getTime();//time zone UTC time
 
-  	this.fb.createEntry(this.data)
+  	this.fb.createEntry(this.data)//call function createEntry
   		.then(_=>{
   			alert("Activity stored");
   			this.data.acname="";
   			this.data.acpic="";
-  			this.data.acdate="";
-  			this.data.acvenue="";
-  			this.data.acdesc="";
   		}, err=>{
   			console.log("ERROR", err);
   		})
