@@ -1,9 +1,48 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-title>
-      Info
+      Spread this great app
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+	<ion-card class="welcome-card">
+	<ion-card-header >
+		<img src="/assets/logokuis.png" alt="" />
+        <ion-card-subtitle>SmartMasjid</ion-card-subtitle>
+        <ion-card-title>Do Share</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      	
+        <p>Help us to share this app</p>
+
+		<ion-list>
+	    <ion-item-sliding >
+	      <ion-item detail lines="full">
+	        Like us fb.com/kuis.fstm<ion-icon name="logo-facebook" slot="start"></ion-icon>
+	      </ion-item>
+	      <ion-item detail lines="full">
+	        Follow us insta.com/kuis.fstm<ion-icon name="logo-instagram" slot="start"></ion-icon>
+	      </ion-item>
+	      <ion-item detail lines="full">
+	        Subscribe our Youtube<ion-icon name="logo-youtube" slot="start"></ion-icon>
+	      </ion-item>
+	      <ion-item detail lines="full" (click)="whatsappShare()">
+	        Share on WhatsApp<ion-icon name="logo-whatsapp" slot="start"></ion-icon>
+	      </ion-item>
+	      <ion-item detail lines="full" (click)="twitterShare()">
+	        Share on Twitter<ion-icon name="logo-twitter" slot="start"></ion-icon>
+	      </ion-item>
+	      <ion-item detail lines="full" (click)="regularShare()">
+	        Choose sharing platform<ion-icon name="share" slot="start"></ion-icon>
+	      </ion-item>
+	      
+	    </ion-item-sliding>
+	  </ion-list>
+
+	</ion-card-content>
+</ion-card>
+
+
+</ion-content>

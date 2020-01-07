@@ -20,8 +20,11 @@ export class Tab2Page {
 
 	filterList(searchterm){
 		if (searchterm!=null){//no search term
-		
-			this.ref.orderByChild('acname').equalTo(searchterm).once('value', resp => {
+			//almost sql LIKE search in firebase
+			this.ref.orderByChild('acname').
+			startAt(searchterm).
+			endAt(searchterm+"\uf8ff").
+			once('value', resp => {
 	    		this.activities = [];
 	    		this.activities = snapshotToArray(resp);//fetch from firebase
 	  			console.log("Search: "+searchterm);

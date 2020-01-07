@@ -1,5 +1,7 @@
 {
   "name": "smasjid",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

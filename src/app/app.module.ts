@@ -12,8 +12,10 @@ import { AppComponent } from './app.component';
 //firebase
 import * as firebase from 'firebase';
 import { environment } from '../environments/environment';
-//import { ServiceWorkerModule } from '@angular/service-worker';//environment.ts
 firebase.initializeApp(environment.firebaseConfig);
+
+//social sharing
+import {SocialSharing}  from '@ionic-native/social-sharing/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,7 @@ firebase.initializeApp(environment.firebaseConfig);
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
+    SocialSharing,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
