@@ -29,6 +29,5 @@ export class Tab1Page {
   			console.log("ERROR", err);
   		})
 
-  }//end createnote
-
-}
+  }//end createActivity
+}//end class

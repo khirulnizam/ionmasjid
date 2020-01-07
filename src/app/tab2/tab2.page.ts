@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+//import firebase additional library
 import * as firebase from 'Firebase';
 
 @Component({
@@ -8,16 +9,35 @@ import * as firebase from 'Firebase';
 })
 export class Tab2Page {
 	activities = [];//hold records
-	ref = firebase.database().ref('activities/');
+	ref = firebase.database().ref('activities/');//firebase root
 
   constructor() {
-  	this.ref.on('value', resp => {
-    this.activities = [];
-    this.activities = snapshotToArray(resp);
-  });
+  	this.ref.once('value', resp => {
+    		this.activities = [];
+    		this.activities = snapshotToArray(resp);//fetch from firebase
+  		});
   }//end constructor
 
-}
+	filterList(searchterm){
+		if (searchterm!=null){//no search term
+		
+			this.ref.orderByChild('acname').equalTo(searchterm).once('value', resp => {
+	    		this.activities = [];
+	    		this.activities = snapshotToArray(resp);//fetch from firebase
+	  			console.log("Search: "+searchterm);
+	  		});
+
+		}else{//display all
+	  		this.ref.once('value', resp => {
+	    		this.activities = [];
+	    		this.activities = snapshotToArray(resp);//fetch from firebase
+	  			console.log("Search: "+"display all records");
+	  		});
+	  	}//end else
+	  }//end filterList
+
+}//end Tab2Page
+
 
 export const snapshotToArray = snapshot => {
     let returnArr = [];
@@ -29,4 +49,4 @@ export const snapshotToArray = snapshot => {
     });
 
     return returnArr;
-};
+};//end snapShot

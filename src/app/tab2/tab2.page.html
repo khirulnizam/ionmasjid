@@ -1,8 +1,9 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>
-      List Activity
+      Search Activity
     </ion-title>
+
   </ion-toolbar>
 </ion-header>
 
@@ -11,10 +12,13 @@
 	<ion-card-header >
 		<img src="/assets/logokuis.png" alt="" />
         <ion-card-subtitle>SmartMasjid</ion-card-subtitle>
-        <ion-card-title>View Activity</ion-card-title>
+        <ion-card-title>Search Activity</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>You may want to swipe-left to manipulate record</p>
+      	<ion-searchbar animated [(ngModel)]="searchterm"
+      	(change)="filterList(searchterm)"></ion-searchbar>
+        <p>You may want to swipe-left to view full record</p>
+
 		<ion-list>
 	    <ion-item-sliding *ngFor="let data of activities">
 	      <ion-item detail lines="full">
@@ -31,8 +35,8 @@
 	      </ion-item-options>
 	    </ion-item-sliding>
 	  </ion-list>
+
 	</ion-card-content>
 </ion-card>
-
 
 </ion-content>
