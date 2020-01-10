@@ -1,0 +1,17 @@
+:root {
+  --ion-color-insta: #E1306C;
+  --ion-color-insta-rgb: 225,48,108;
+  --ion-color-insta-contrast: #ffffff;
+  --ion-color-insta-contrast-rgb: 255,255,255;
+  --ion-color-insta-shade: #c62a5f;
+  --ion-color-insta-tint: #e4457b;
+}
+
+.ion-color-insta {
+  --ion-color-base: var(--ion-color-insta);
+  --ion-color-base-rgb: var(--ion-color-insta-rgb);
+  --ion-color-contrast: var(--ion-color-insta-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-insta-contrast-rgb);
+  --ion-color-shade: var(--ion-color-insta-shade);
+  --ion-color-tint: var(--ion-color-insta-tint);
+}
