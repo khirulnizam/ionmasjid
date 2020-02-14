@@ -29,9 +29,12 @@
 	      	<ion-item-option color="primary">
 	        	<ion-icon name="share"></ion-icon>
 	        	</ion-item-option>
+	        	<!-- button update -->
 	        <ion-item-option color="success">
-	        	<ion-icon name="create"></ion-icon>
+	        	<ion-icon name="create"
+	        	(click)="goEditpage(data.acname)"></ion-icon>
 	        </ion-item-option>
+	        	<!-- button delete -->
 	        <ion-item-option color="danger">
 	        	<ion-icon name="trash"></ion-icon>
 	        </ion-item-option>

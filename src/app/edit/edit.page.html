@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Edit Activity 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-card class="welcome-card">
+      <img src="/assets/logokuis.png" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>SmartMasjid</ion-card-subtitle>
+        <ion-card-title>Edit Activity</ion-card-title>
+      </ion-card-header>
+      <ion-card-content >
+        
+        <p>Edit existing activity with key {{this.key}}</p>
+        <!-- Input with placeholder -->
+        <ion-list *ngFor="let data of activity">
+        <ion-item>
+          <ion-label position="floating">Activity name</ion-label>
+          <ion-input name="acname" type="text"
+          value="{{data.acname}}"
+          placeholder="Activity name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Person incharge</ion-label>
+          <ion-input  type="text"
+          value="{{data.acpic}}"
+          placeholder="Person incharge"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Date activity</ion-label>
+          <ion-input type="date"
+          value="{{data.acdate}}"
+          placeholder="Date"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Venue</ion-label>
+          <ion-input type="text" value="a"
+          value="{{data.acvenue}}"
+          placeholder="Venue"></ion-input>
+        </ion-item>
+        <!-- Textarea in an item with a placeholder -->
+        <ion-item>
+          <ion-label position="floating">Activity description</ion-label>
+          <ion-textarea 
+          value="{{data.acdesc}}"
+          placeholder="Enter more activity information here..."></ion-textarea>
+        </ion-item>
+
+        <!-- Round button -->
+        <ion-button color="success"
+        (click)="saveActivity()">Save update Activity</ion-button>
+        <ion-button color="dark"
+        type="reset" fill="outline">Reset</ion-button>
+
+      </ion-list>
+
+      </ion-card-content>
+    </ion-card>
+    
+</ion-content>

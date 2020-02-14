@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 //import Firebase Service
 import {FirebaseService} from '../service/firebase.service';
+//Navigation
+import { NavController } from '@ionic/angular';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tab1',
@@ -13,6 +16,7 @@ export class Tab1Page {
   constructor(
   	//declare FirebaseService as fb
   	public fb:FirebaseService,
+    public navCtrl: NavController, private router: Router
   	) {}
 
   createActivity(){//create data entry
@@ -23,11 +27,13 @@ export class Tab1Page {
   	this.fb.createEntry(this.data)//call function createEntry
   		.then(_=>{
   			alert("Activity stored");
-  			this.data.acname="";
-  			this.data.acpic="";
+  			//this.data.acname="";
+  			//this.data.acpic="";
   		}, err=>{
   			console.log("ERROR", err);
   		})
 
   }//end createActivity
+
+
 }//end class

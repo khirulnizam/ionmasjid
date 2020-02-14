@@ -6,16 +6,21 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page {//class name
 
-  constructor(private socialSharing:SocialSharing ) {}
+  constructor(private socialSharing:SocialSharing ) {
+  	//constructor - initially run if class is instantiated
+  }
 
-  compilemsg(){
+  compilemsg(){//a function or method
 	  var msg = "Sharing activity app by FSTM KUIS \n "+
 	  		"Visit us at http://fstm.kuis.edu.my  \n"+
 	  		" \n Sent from our Awesome App !";
 	  return msg;
 	}
+
+
+
 	regularShare(){
 	  var msg = this.compilemsg();
 	  this.socialSharing.share(msg, null, null, null);

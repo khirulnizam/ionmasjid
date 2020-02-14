@@ -13,7 +13,7 @@ export class FirebaseService {
   {
     return new Promise((resolve,reject)=>{
 
-      let post_key=firebase.database().ref().child('abcabc').push().key;
+      let post_key=firebase.database().ref().child('secret').push().key;
       //_pfaiadslahahbsd
 
       firebase.database().ref('activities/'+post_key+'/')
