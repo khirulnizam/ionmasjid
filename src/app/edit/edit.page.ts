@@ -5,6 +5,7 @@ import * as firebase from 'Firebase';
 import { NavController } from '@ionic/angular';
 import {Router} from "@angular/router";
 import {ActivatedRoute} from "@angular/router";
+import {FirebaseService} from '../service/firebase.service';
 
 @Component({
   selector: 'app-edit',
@@ -18,10 +19,12 @@ export class EditPage implements OnInit {
   root:any;
 	activity = [];//hold records
   ref = firebase.database().ref('activities');//firebase root
+  data:any={};//
 	
   constructor(public navCtrl: NavController, 
   				private router: Router, 
-  				private route:ActivatedRoute) {
+  				private route:ActivatedRoute,
+          public fb:FirebaseService,) {
 
   	this.sub = this.route.params.subscribe(param =>{
       	//this.key=decodeURI(this.route.snapshot.params.key);
@@ -30,14 +33,6 @@ export class EditPage implements OnInit {
         //this.ref = firebase.database().ref('activities');//firebase root
       	
 	  });
-    
-    /*firebase.database().ref(this.root).once('value', resp => {
-  	//firebase.database().ref('activities/').child(this.key).on('value', resp => {
-  		console.log("Resp: "+resp);
-      console.log("Root: "+this.root);
-      console.log("Key:"+this.key);
-    	this.activity = snapshotToObject(resp);
-  	});*/
 
     //search 1rec by acname
     this.ref.orderByChild('acname').
@@ -56,6 +51,20 @@ export class EditPage implements OnInit {
         });
 
   }//constructor
+
+  saveUpdateActivity() {
+
+    this.fb.updateEntry(this.data, this.data.key)//call function createEntry
+      .then(_=>{
+        alert("Activity saved update: key: "+this.data.key+
+          "acname: "+this.data.acname);
+        //this.router.navigate(['tab2']);
+        //this.data.acname="";
+        //this.data.acpic="";
+      }, err=>{
+        console.log("ERROR", err);
+      })
+  }
 
 
   ngOnInit() {
