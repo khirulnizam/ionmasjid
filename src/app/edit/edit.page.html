@@ -16,38 +16,42 @@
       </ion-card-header>
       <ion-card-content >
         
-        <p>Edit existing activity with key {{this.key}}</p>
-        <!-- Input with placeholder -->
-        <ion-list *ngFor="let data of activity">
+        <p>Edit existing activity with key {{activity.key}}</p>
+        <!-- Input with placeholder 
+          *ngFor="let rec of activity"
+        -->
+        <ion-list >
           <ion-item>
             <ion-label position="floating">Activity key</ion-label>
             <ion-input type="text"
-            [(ngModel)]="data.key"
+            [(ngModel)]="activity.key"
+            
             readonly
             placeholder="Activity id"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Activity name</ion-label>
             <ion-input type="text"
-            [(ngModel)]="data.acname"
+            value="{{activity.acname}}"
             placeholder="Activity name"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Person incharge</ion-label>
             <ion-input  type="text"
-            [(ngModel)]="data.acpic"
+            [(ngModel)]="activity.acpic"
             placeholder="Person incharge"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Date activity</ion-label>
             <ion-input type="date"
-            [(ngModel)]="data.acdate"
+            [(ngModel)]="activity.acdate"
             placeholder="Date"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Venue</ion-label>
             <ion-input type="text"
-            [(ngModel)]="data.acvenue"
+
+            [(ngModel)]="activity.acvenue"
             placeholder="Venue"></ion-input>
           </ion-item>
           <!-- Textarea in an item with a placeholder -->
@@ -55,7 +59,8 @@
             <ion-label position="floating">Activity description</ion-label>
             <ion-textarea 
             placeholder="Enter more activity information here..."
-            [(ngModel)]="data.acdesc">
+            [(ngModel)]="activity.acdesc"
+            >
             </ion-textarea>
           </ion-item>
 

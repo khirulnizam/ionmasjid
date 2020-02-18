@@ -23,7 +23,6 @@ export class Tab2Page {
   }//end constructor
 
 	filterList(searchterm){
-		//searchterm="Kursus%20Solat%20Khusyuk";
 		if (searchterm!=null){//no search term
 			//almost sql LIKE search in firebase
 			this.ref.orderByChild('acname').

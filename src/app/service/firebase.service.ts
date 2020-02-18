@@ -38,6 +38,8 @@ export class FirebaseService {
       .update(entry) //insert record to firebase
       .then(resp=>{
         resolve("OK");//record successfully added to root firebase
+        console.log("Entry: ");
+        console.log(entry);
       },err=>{
         reject(err);//record failed to insert
       })
